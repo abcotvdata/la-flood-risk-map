@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flood Risk Map</title>
+
+	<!-- viewport for responsive -->	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<!-- CSS stylesheets -->	
+	<link href="css/normalize.css" rel="stylesheet" type="text/css">
+	<link href="css/jqueryui.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.typekit.net/fyj8twa.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  </head>
+  <body>
+
+    <div class="maptitle">
+
+      <h1>Flood Risk Map</h1>
+      <h3>This map, <a href="https://www.arcgis.com/home/webmap/viewer.html?webmap=3c17212bfc144a9a932d0341b9413fa3&extent=-118.7967,33.5916,-117.4406,34.2735" target="_Blank">originally created by researchers at UCI</a>, shows how deep flood waters could be in the Los Angeles metro area in the event of a severe flood, taking into account coastal, fainfall and river flooding. <br> Search for your zip code below to find out how deep flooding could be in your area.</h3>
+
+      <button class="button" id="searchagain">Search for a zip code</button>
+
+      <div class="overlay">
+        <div class="searcharea">
+
+          <input type="text" name="zip" id="zip" placeholder="Zip/postal code">
+          <button class="button" id="submit">SUBMIT</button><button class="button" id="justexplore">JUST EXPLORE THE MAP</button>
+
+        </div>
+      </div>
+
+    </div>
+
+    
+
+    <div class="tryagain">
+
+      <div class="tryagaintext">
+
+        <h2>Error!</h2>
+        <p>Please type a valid zip code</p>
+
+        <button class="button" id="oktryagain">OK</button>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="legend">
+
+      <h3>Flood depth</h3>
+
+      <div class="item">
+        <div class="box ankle"></div><div class="label">Up to ankle-deep (3 to 11 cm)</div>
+      </div> 
+
+      <div class="item">
+        <div class="box knee"></div><div class="label">Ankle to knee-deep (11 to 45 cm)</div>
+      </div>
+
+      <div class="item">  
+        <div class="box waist"></div><div class="label">Knee to waist-deep (45 to 100 cm)</div>
+      </div>
+
+      <div class="item">  
+        <div class="box head"></div><div class="label">Waist to head-deep (100 to 170 cm)</div>
+      </div>
+
+      <div class="item">  
+        <div class="box overhead"></div><div class="label">Over head-deep (170 cm and up)</div>
+      </div>
+      
+
+    </div><!--  end legend -->
+
+
+
+    <div class="background">
+      <!-- <img src="img/Background.png"> -->
+
+      <div id="map"></div>
+
+      <!-- <div class="shade">
+        <img src="img/Shade.png">
+      </div> -->
+      
+    </div>
+
+    <div class="footer">
+      <p>Source: <a href="https://floodlab.eng.uci.edu/" target="_Blank" > UCI Flood Lab</a></p>
+    </div>
+
+
+   
+
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+	<script src="js/jquery.js"></script>
+  <script src="js/jqueryui.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+<!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
+
+<!-- plugins to load tif files-->
+  <!-- <script src="https://unpkg.com/proj4"></script>
+  <script src="https://unpkg.com/georaster"></script>
+  <script src="https://unpkg.com/georaster-layer-for-leaflet"></script> -->
+
+<!-- geojson -->
+  <script src="la-metro-zips-2.geojson"></script>
+
+
+  <script src="js/script.js"></script>
+  </body>
+</html>
+
+
+
