@@ -33,6 +33,21 @@
 
 $(document).ready(function(){ // begin document.ready block
 
+  $('#radio_box').change(function(){
+
+    selected_value = $("input[name='metric']:checked").val();
+    console.log(selected_value);
+
+    if(selected_value == "CM") {
+      $(".legenditems").html('<div class="item"><div class="box ankle"></div><div class="label">Up to ankle-deep (3 to 11 cm)</div></div><div class="item"><div class="box knee"></div><div class="label">Ankle to knee-deep (11 to 45 cm)</div></div><div class="item"><div class="box waist"></div><div class="label">Knee to waist-deep (45 to 100 cm)</div></div><div class="item"><div class="box head"></div><div class="label">Waist to head-deep (100 to 170 cm)</div></div><div class="item"><div class="box overhead"></div><div class="label">Over head-deep (170 cm and up)</div></div>')
+    } else if (selected_value == "IN") {
+      $(".legenditems").html('<div class="item"><div class="box ankle"></div><div class="label">Up to ankle-deep (1.2 to 4.3 in)</div></div><div class="item"><div class="box knee"></div><div class="label">Ankle to knee-deep (4.3 in to 1.5 ft)</div></div><div class="item"><div class="box waist"></div><div class="label">Knee to waist-deep (1.5 to 3.3 ft)</div></div><div class="item"><div class="box head"></div><div class="label">Waist to head-deep (3.3 to 5.6 ft)</div></div><div class="item"><div class="box overhead"></div><div class="label">Over head-deep (5.6 ft and up)</div></div>')
+    }
+
+  });
+
+
+
 
 	var map = L.map('map', {minZoom: 3}).setView([33.9864365,-118.1101426], 10);
 
@@ -60,17 +75,19 @@ $(document).ready(function(){ // begin document.ready block
 $("#justexplore").click(function(){
   $(".overlay").fadeOut();
   $("#searchagain").fadeIn();
+  $(".maptitle h3").html("How deep could flood waters be in your area?")
 });
 
 $("#searchagain").click(function(){
   $("#searchagain").fadeOut();
   $(".overlay").fadeIn();
+  $(".maptitle h3").html('This map, <a href="https://www.arcgis.com/home/webmap/viewer.html?webmap=3c17212bfc144a9a932d0341b9413fa3&extent=-118.7967,33.5916,-117.4406,34.2735" target="_Blank">originally created by researchers at UCI</a>, shows how deep flood waters could be in the Los Angeles metro area in the event of a severe flood, taking into account coastal, fainfall and river flooding. <br> Search for your zip code below to find out how deep flooding could be in your area.</h3>')
 });
+
 
 
 $("#submit").on("click", function(){
 
-  
 
   // map.removeLayer(filtered_zip)
 
@@ -94,7 +111,6 @@ $("#submit").on("click", function(){
       $(".overlay").fadeOut();
       $("#searchagain").fadeIn();
 
-
         // zip layer
         $.getJSON("la-metro-zips-2.geojson",function(data){
 
@@ -117,7 +133,7 @@ $("#submit").on("click", function(){
             });
           }
 
-
+          $(".maptitle h3").html("How deep could flood waters be in your area?")
 
             var myStyle = {
               "fillColor": "rgba(0,0,0,0)",

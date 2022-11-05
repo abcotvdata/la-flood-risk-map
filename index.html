@@ -52,30 +52,45 @@
 
 
     <div class="legend">
+      <div class="innerlegend">
 
-      <h3>Flood depth</h3>
+        <h3>Flood depth</h3>
 
-      <div class="item">
-        <div class="box ankle"></div><div class="label">Up to ankle-deep (3 to 11 cm)</div>
-      </div> 
+        <div class="legendmetrics">
+          <form id = "radio_box">
+            <input type="radio" id="CM" name="metric" value="CM" checked><label for="CM">cm</label>
+            <input type="radio" id="IN" name="metric" value="IN"><label for="IN">in/ft</label>
+          </form>
+        </div>
+        
 
-      <div class="item">
-        <div class="box knee"></div><div class="label">Ankle to knee-deep (11 to 45 cm)</div>
+        <div class="legenditems">
+          <div class="item">
+            <div class="box ankle"></div><div class="label">Up to ankle-deep (3 to 11 cm)</div>
+          </div> 
+
+          <div class="item">
+            <div class="box knee"></div><div class="label">Ankle to knee-deep (11 to 45 cm)</div>
+          </div>
+
+          <div class="item">  
+            <div class="box waist"></div><div class="label">Knee to waist-deep (45 to 100 cm)</div>
+          </div>
+
+          <div class="item">  
+            <div class="box head"></div><div class="label">Waist to head-deep (100 to 170 cm)</div>
+          </div>
+
+          <div class="item">  
+            <div class="box overhead"></div><div class="label">Over head-deep (170 cm and up)</div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <p>Source: <a href="https://floodlab.eng.uci.edu/" target="_Blank" > UCI Flood Lab</a></p>
+        </div>
+        
       </div>
-
-      <div class="item">  
-        <div class="box waist"></div><div class="label">Knee to waist-deep (45 to 100 cm)</div>
-      </div>
-
-      <div class="item">  
-        <div class="box head"></div><div class="label">Waist to head-deep (100 to 170 cm)</div>
-      </div>
-
-      <div class="item">  
-        <div class="box overhead"></div><div class="label">Over head-deep (170 cm and up)</div>
-      </div>
-      
-
     </div><!--  end legend -->
 
 
@@ -91,9 +106,9 @@
       
     </div>
 
-    <div class="footer">
+    <!-- <div class="footer">
       <p>Source: <a href="https://floodlab.eng.uci.edu/" target="_Blank" > UCI Flood Lab</a></p>
-    </div>
+    </div> -->
 
 
    

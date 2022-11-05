@@ -22,6 +22,14 @@ body {
   font-style: normal;
 }
 
+a {
+  color: #0058f6;
+}
+
+a:visited {
+  color: #0058f6
+}
+
 .maptitle {
   position: fixed;
   top: 0px;
@@ -50,8 +58,17 @@ body {
     font-weight: 500;
     font-style: normal;
     padding: 15px 40px;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(187,195,201,1) 25%, rgba(187,195,201,1) 50%, rgba(187,195,201,1) 75%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+    color: white;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(81,88,95,1) 10%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 75%, rgba(81,88,95,1) 90%, rgba(255,255,255,0) 100%);
 
+  }
+
+  .maptitle h3 a {
+    color: #99a0a5
+  }
+
+  .maptitle h3 a:visited {
+    color: #99a0a5
   }
 
 .overlay {
@@ -141,6 +158,18 @@ body {
   padding: 10px;
   box-shadow: 0px 0px 5px black;
 }
+
+  .innerlegend {
+    width: 100%;
+    position: relative;
+  }
+
+  .legendmetrics {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+  }
 
 .legend h3 {
   font-family: proxima-nova,sans-serif;
@@ -376,15 +405,15 @@ body {
   }
 
   .footer {
-    position: fixed;
-    bottom: 5px;
-    right: 0px;
-    text-align: right;
     font-size: 14px;
     font-style: italic;
-    z-index: 1000;
-    padding: 5px;
     color: black;
+    font-weight: normal;
+  }
+
+  .footer p {
+    margin: 0px;
+    paddng: 0px;
   }
 
 @media only screen and (max-width: 1000px) {
@@ -410,7 +439,12 @@ body {
   }
 
   .maptitle h3 {
-    font-size: 13px;
+    font-size: 12px;
+    padding: 15px 20px;
+  }
+
+  .searcharea {
+    max-width: 300px;
   }
 
   .leaflet-fixed-pane {
@@ -457,9 +491,21 @@ body {
   }
 
   .footer {
-    padding-bottom: 15px;
     font-size: 12px;
     font-weight: 300;
+  }
+
+  .legend {
+    font-size: 14px;
+  }
+
+  .item {
+    font-size:12px;
+  }
+
+  .box {
+    width: 15px;
+    height: 15px;
   }
 
 }
